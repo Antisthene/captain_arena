@@ -14,6 +14,8 @@ class FightLauncher
     @fight = fight
     @attacker = @fight.attacker.dup
     @defender = @fight.defender.dup
+    @attacker_item = @fight.attacker_item
+    @defender_item = @fight.defender_item
     @step = 0
   end
 
@@ -51,11 +53,19 @@ class FightLauncher
   end
 
   def attacker_takes_damage
-    @attacker.health_point = @attacker.health_point - @defender.attack
+    damage = @defender.attack
+    damage += @defender_item.damage if @defender_item.instance_of?(::Weapon)
+    defense = 0
+    defense += @attacker_item.defense if @attacker_item.instance_of?(::Shield)
+    @attacker.health_point = @attacker.health_point + defense - damage
   end
 
   def defender_takes_damage
-    @defender.health_point = @defender.health_point - @attacker.attack
+    damage = @attacker.attack
+    damage += @attacker_item.damage if @attacker_item.instance_of?(::Weapon)
+    defense = 0
+    defense += @defender_item.defense if @defender_item.instance_of?(::Shield)
+    @defender.health_point = @defender.health_point + defense - damage
   end
 
   def display_result
