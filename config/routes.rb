@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   resources :players
+  resources :fights, except: %i[update delete]
 end

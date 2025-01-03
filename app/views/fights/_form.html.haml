@@ -1,0 +1,17 @@
+%h3
+  Player Set
+= form_with(model: fight) do |f|
+  - if fight.errors.any?
+    - fight.errors.full_messages.each do |error|
+      = error
+
+  %h4
+    Attacker
+    = f.collection_select :attacker_id, Player.all, :id, :name
+  
+  %h4
+    Defender
+    = f.collection_select :defender_id, Player.all, :id, :name
+
+  = f.submit 'Fight'
+  %p= link_to "Return to list", fights_path
