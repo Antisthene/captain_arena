@@ -10,5 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2025_01_03_184254) do
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.integer "health_point", default: 50
+    t.integer "attack", default: 10
+    t.integer "dexterity", default: 10
+    t.integer "intelligence", default: 10
+    t.integer "experience", default: 0
+    t.integer "level", default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 end

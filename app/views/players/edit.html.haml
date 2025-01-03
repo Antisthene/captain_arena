@@ -1,0 +1,4 @@
+- if @player.nil?
+  MISSING
+- else
+  = render partial: 'form', locals: {player: @player}
