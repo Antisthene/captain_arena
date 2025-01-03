@@ -1,4 +1,4 @@
-- if @fight.nil?
-  MISSING
+- if @fight.nil? || Player.none?
+  MISSING DATA
 - else
   = render partial: 'form', locals: {fight: @fight}
