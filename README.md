@@ -20,5 +20,5 @@ From the home page, you can see your first players and weapons. Fill free to add
 Go to Fight
 
 ## VERSIONS
-* Ruby '3.2.2'
-* Rails '~> 7.0.6'
+* Ruby `3.2.2`
+* Rails `~> 7.0.6`
