@@ -1,0 +1,31 @@
+%h3
+  Player Creation
+= form_with(model: player) do |f|
+  - if player.errors.any?
+    - player.errors.full_messages.each do |error|
+      = error
+
+  %p= "Maximum total stats value: #{Player::MAX_STAT_POINTS}"
+
+  = f.label :name
+  = f.text_field :name
+  %br
+
+  = f.label :health_point
+  = f.number_field :health_point, in: 50..60
+  %br
+
+  = f.label :attack
+  = f.number_field :attack, in: 10..20
+  %br
+
+  = f.label :dexterity
+  = f.number_field :dexterity, in: 10..20
+  %br
+
+  = f.label :intelligence
+  = f.number_field :intelligence, in: 10..20
+  %br
+
+  = f.submit 'Save'
+  %p= link_to "Return to list", players_path

@@ -1,0 +1,23 @@
+- if @player.nil?
+  MISSING
+- else
+  %table
+    %tbody
+      %tr
+        %th Id
+        %th Name
+        %th Health Point
+        %th Attack
+        %th Dexterity
+        %th Intelligence
+        %th Experience
+        %th Level
+      %tr
+        %td= @player.id
+        %td= @player.name
+        %td= @player.health_point
+        %td= @player.attack
+        %td= @player.dexterity
+        %td= @player.intelligence
+        %td= @player.experience
+        %td= @player.level
