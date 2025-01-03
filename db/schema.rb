@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_01_03_192354) do
+ActiveRecord::Schema[7.0].define(version: 2025_01_03_211129) do
   create_table "fights", force: :cascade do |t|
     t.integer "attacker_id", null: false
     t.integer "defender_id", null: false
@@ -33,6 +33,23 @@ ActiveRecord::Schema[7.0].define(version: 2025_01_03_192354) do
     t.integer "intelligence", default: 10
     t.integer "experience", default: 0
     t.integer "level", default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shields", force: :cascade do |t|
+    t.string "name"
+    t.integer "defense"
+    t.integer "require_dexterity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "weapons", force: :cascade do |t|
+    t.string "name"
+    t.integer "damage"
+    t.integer "require_dexterity"
+    t.integer "require_intelligence"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

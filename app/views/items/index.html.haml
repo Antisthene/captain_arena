@@ -1,0 +1,9 @@
+- if @weapons.any?
+  %h4
+    WEAPONS
+    = render partial: 'list', locals: {items: @weapons, type: 'weapon'}
+
+- if @shields.any?
+  %h4
+    SHIELDS
+    = render partial: 'list', locals: {items: @shields, type: 'shield'}

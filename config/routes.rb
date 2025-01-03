@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   resources :players
   resources :fights, except: %i[update delete]
+  resources :items, only: %i[index]
+  resources :weapons, only: %i[show]
+  resources :shields, only: %i[show]
 end

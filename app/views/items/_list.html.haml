@@ -1,0 +1,13 @@
+- value_header = items.first.class.name == 'Weapon' ? 'Damage' : 'Defense'
+%table
+  %tbody
+    %tr
+      %th Id
+      %th Name
+      %th= value_header
+    - items.each do |item|
+      %tr
+        %td= item.id
+        %td= link_to item.name, (item.class.name == 'Weapon' ? weapon_path(item) : shield_path(item))
+        %td= item.class.name == 'Weapon' ? item.damage : item.defense
+
