@@ -4,6 +4,8 @@ class Fight < ApplicationRecord
 
   belongs_to :attacker, class_name: 'Player'
   belongs_to :defender, class_name: 'Player'
+  belongs_to :attacker_item, class_name: 'Weapon', optional: true
+  belongs_to :defender_item, class_name: 'Shield', optional: true
   validates :attacker, :defender, presence: true
   validate :cannot_be_alone
 
