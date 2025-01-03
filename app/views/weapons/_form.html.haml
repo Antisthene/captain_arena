@@ -1,0 +1,17 @@
+%h3
+  Weapon Creation
+= form_with(model: weapon) do |f|
+  - if weapon.errors.any?
+    - weapon.errors.full_messages.each do |error|
+      = error
+
+  = f.label :name
+  = f.text_field :name
+  %br
+
+  = f.label :damage
+  = f.number_field :damage, in: 1..9
+  %br
+
+  = f.submit 'Save'
+  %p= link_to "Return to list", items_path
