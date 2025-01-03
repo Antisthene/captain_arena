@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_01_03_184254) do
+ActiveRecord::Schema[7.0].define(version: 2025_01_03_192354) do
+  create_table "fights", force: :cascade do |t|
+    t.integer "attacker_id", null: false
+    t.integer "defender_id", null: false
+    t.integer "winner_id"
+    t.integer "loser_id"
+    t.string "result"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attacker_id"], name: "index_fights_on_attacker_id"
+    t.index ["defender_id"], name: "index_fights_on_defender_id"
+    t.index ["loser_id"], name: "index_fights_on_loser_id"
+    t.index ["winner_id"], name: "index_fights_on_winner_id"
+  end
+
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.integer "health_point", default: 50

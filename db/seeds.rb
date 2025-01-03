@@ -7,5 +7,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Player.find_or_create_by(name: 'Bob', dexterity: 17)
-Player.find_or_create_by(name: 'Zork', intelligence: 17)
+attacker = Player.find_or_create_by(name: 'Bob', dexterity: 17)
+defender = Player.find_or_create_by(name: 'Zork', intelligence: 17)
+fight = Fight.new(attacker: , defender:)
+fight.launch

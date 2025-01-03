@@ -2,11 +2,18 @@
   Welcome to the arena.
 
 %h3
-  Fight
+  - if @last_fight
+    Last Fight
+    %p= @last_fight.result
 
-%h3
+%h2
+  = link_to "Fight!", new_fight_path
+
+%h5
   Setup
   %br
   = link_to "Player Creation", new_player_path
   %br
-  = link_to "Players List", players_path
+  = link_to "Player List", players_path
+  %br
+  = link_to "Fight List", fights_path

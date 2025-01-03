@@ -1,0 +1,12 @@
+%h2
+  Fights
+
+%table
+  %tbody
+    %tr
+      %th Id
+      %th Result
+    - @fights.each do |fight|
+      %tr
+        %td= fight.id
+        %td= fight.result
